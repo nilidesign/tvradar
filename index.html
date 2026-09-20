@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Oversikt over hvem som har TV-rettighetene til sport i Norge — hvilken kanal eller strømmetjeneste som sender hver liga, og når avtalen går ut.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tvradar.no/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TVradar.no">
+<meta property="og:title" content="TVradar — sportsrettigheter i Norge">
+<meta property="og:description" content="Oversikt over hvem som har TV-rettighetene til sport i Norge — hvilken kanal eller strømmetjeneste som sender hver liga, og når avtalen går ut.">
+<meta property="og:url" content="https://tvradar.no/">
+<meta property="og:locale" content="nb_NO">
+<meta name="theme-color" content="#070D1C">
+<title>TVradar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Azeret+Mono:wght@400;500;700&display=swap">
+<style>
+:root{
+  --night:#070D1C;
+  --night-2:#0C142A;
+  --surface:#101A34;
+  --surface-2:#16223F;
+  --line:#22304F;
+  --line-soft:#1A2643;
+  --chalk:#E8EDF9;
+  --slate:#7A88A8;
+  --flood:#FFB43D;
+  --flood-dim:#6B4A12;
+  --signal:#FF4438;
+  --ok:#3FD39A;
+  --font-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"Azeret Mono","SFMono-Regular",Consolas,monospace;
+  --gutter:clamp(16px,4vw,40px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--night);color:var(--chalk);
+  font-family:var(--font-display);font-size:15px;line-height:1.5;
+  font-variant-numeric:tabular-nums;overflow-x:hidden;
+}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--flood);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:var(--gutter)}
+
+/* ---------- banner ---------- */
+.draft{
+  background:var(--flood-dim);border-bottom:1px solid #8A6318;
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.03em;color:#FFE3B0;
+}
+.draft .wrap{padding-block:8px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.draft b{color:var(--flood);font-weight:700}
+
+/* ---------- topbar ---------- */
+.topbar{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:rgba(7,13,28,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+.topbar-in{display:flex;align-items:center;gap:22px;height:54px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.logo-mark{width:28px;height:28px;flex:none}
+.sweep{transform-origin:16px 16px;animation:sweep 3.6s linear infinite}
+@keyframes sweep{to{transform:rotate(360deg)}}
+.logo-type{font-weight:900;font-stretch:118%;font-size:18px;letter-spacing:-.02em;text-transform:uppercase;line-height:1}
+.logo-type em{font-style:normal;color:var(--flood)}
+.logo-tld{font-family:var(--font-mono);font-size:10px;color:var(--slate);letter-spacing:.06em;align-self:flex-start;margin-top:1px}
+.nav{display:flex;gap:20px;margin-left:auto;font-size:13.5px;font-weight:500}
+.nav a{text-decoration:none;color:var(--slate);transition:color .18s}
+.nav a:hover{color:var(--chalk)}
+.topbar-date{font-family:var(--font-mono);font-size:11px;color:var(--slate);text-transform:uppercase;letter-spacing:.09em;border-left:1px solid var(--line);padding-left:20px}
+@media(max-width:860px){.nav,.topbar-date{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft)}
+#sky{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-veil{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to top,rgba(7,13,28,.93) 0%,rgba(7,13,28,.58) 48%,rgba(7,13,28,.16) 100%),
+    repeating-linear-gradient(to bottom,rgba(255,255,255,.022) 0 1px,transparent 1px 3px);
+  pointer-events:none;
+}
+.hero-in{
+  position:relative;display:grid;align-items:center;
+  grid-template-columns:minmax(0,1fr) minmax(296px,430px);
+  gap:clamp(18px,3.4vw,44px);padding-block:clamp(22px,3.4vw,36px);
+}
+@media(max-width:900px){.hero-in{grid-template-columns:1fr;gap:18px}}
+.eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--flood);margin-bottom:11px}
+.eyebrow .bar{width:22px;height:1px;background:var(--flood-dim)}
+.hero h1{font-size:clamp(26px,4.3vw,46px);font-weight:900;font-stretch:120%;line-height:.98;letter-spacing:-.033em;margin:0 0 9px;text-wrap:balance;max-width:17ch}
+.hero h1 span{color:var(--flood)}
+.hero-lede{max-width:46ch;color:#AAB5CD;font-size:14.5px;margin:0}
+
+.nextup{
+  background:linear-gradient(150deg,rgba(22,34,63,.92),rgba(12,20,42,.92));
+  border:1px solid var(--line);border-left:3px solid var(--flood);
+  padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:clamp(14px,2.4vw,26px);
+}
+.nu-left{display:grid;gap:7px;justify-items:start;min-width:0}
+.nextup-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.nextup-label em{font-style:normal;color:var(--flood)}
+.nextup-teams{font-size:clamp(17px,2.1vw,22px);font-weight:800;font-stretch:112%;letter-spacing:-.02em;line-height:1.12}
+.nu-right{text-align:right;flex:none}
+.count-label{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:6px}
+.count{font-family:var(--font-mono);font-weight:700;font-size:clamp(23px,3.1vw,31px);letter-spacing:-.045em;line-height:1}
+.count small{display:block;font-size:10px;font-weight:400;letter-spacing:.1em;color:var(--slate);margin-top:5px;text-transform:uppercase}
+
+/* ---------- shared ---------- */
+.pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;letter-spacing:.03em;padding:4px 9px;border:1px solid var(--line);background:var(--night-2);color:#B9C3D9;white-space:nowrap}
+.pill.free{border-color:#1F5741;color:var(--ok);background:#0C2A20}
+
+/* ---------- ticker ---------- */
+.ticker{border-block:1px solid var(--line-soft);background:var(--night-2);overflow:hidden}
+.ticker-track{display:flex;gap:40px;padding-block:9px;width:max-content;animation:roll 58s linear infinite}
+@keyframes roll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker-track,.sweep{animation:none}}
+.ticker-item{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11.5px;color:var(--slate);white-space:nowrap}
+.ticker-item b{color:var(--chalk);font-weight:500}
+.ticker-item i{font-style:normal;color:var(--flood)}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(44px,6vw,76px)}
+#tjenester{padding-block:clamp(24px,3.2vw,38px) clamp(30px,4vw,52px)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.sec-head h2{font-size:clamp(23px,3.1vw,34px);font-weight:900;font-stretch:115%;letter-spacing:-.028em;margin:0;line-height:1}
+.sec-head p{margin:8px 0 0;color:var(--slate);font-size:14px;max-width:54ch}
+.sec-num{font-family:var(--font-mono);font-size:11px;color:var(--flood);letter-spacing:.12em;margin-bottom:9px}
+
+/* ---------- tjenester ---------- */
+.svc-panel{background:var(--night-2);border:1px solid var(--line-soft);padding:clamp(18px,3vw,28px)}
+.svc-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.svc{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border:1px solid var(--line);background:var(--surface);color:var(--slate);font-size:13.5px;font-weight:500;transition:all .16s ease}
+.svc:hover{border-color:#33456E;color:var(--chalk)}
+.svc[aria-pressed="true"]{background:var(--flood);border-color:var(--flood);color:#2A1B02;font-weight:700}
+.svc .tick{width:14px;height:14px;opacity:.28}
+.svc[aria-pressed="true"] .tick{opacity:1}
+.verdict{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;border-top:1px solid var(--line-soft);padding-top:20px}
+@media(max-width:620px){.verdict{grid-template-columns:1fr;gap:14px}}
+.verdict-num{font-family:var(--font-mono);font-size:clamp(30px,5vw,44px);font-weight:700;line-height:.9;letter-spacing:-.045em;color:var(--flood)}
+.verdict-num small{display:block;font-size:11px;font-weight:400;color:var(--slate);letter-spacing:.11em;text-transform:uppercase;margin-top:9px}
+.verdict-txt{font-size:14.5px;color:#AAB5CD}
+.verdict-txt strong{color:var(--chalk);font-weight:700}
+.verdict-txt .hint{display:block;margin-top:9px;font-size:13px;color:var(--slate)}
+.verdict-txt .hint b{color:var(--flood);font-weight:600}
+
+/* ---------- rettighetskart ---------- */
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
+.chip{padding:6px 12px;border:1px solid var(--line);background:transparent;color:var(--slate);font-size:12.5px;font-weight:500;transition:all .15s}
+.chip:hover{color:var(--chalk);border-color:#33456E}
+.chip[aria-pressed="true"]{background:var(--chalk);border-color:var(--chalk);color:var(--night);font-weight:700}
+.chip.toggle[aria-pressed="true"]{background:var(--surface-2);border-color:var(--flood);color:var(--flood)}
+
+.sport-group{margin-bottom:30px}
+.sport-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--flood);padding-bottom:9px;border-bottom:1px solid var(--line);margin-bottom:2px}
+.right-row{display:grid;grid-template-columns:1fr auto auto;gap:16px;align-items:center;padding:13px 12px;border-bottom:1px solid var(--line-soft);transition:background .15s}
+.right-row:hover{background:var(--night-2)}
+.right-row.is-locked .r-comp{opacity:.45}
+.r-comp{font-size:16px;font-weight:700;font-stretch:108%;letter-spacing:-.015em;min-width:0}
+.r-comp span{display:block;font-family:var(--font-mono);font-size:10.5px;font-weight:400;color:var(--slate);letter-spacing:.05em;margin-top:4px;text-transform:uppercase}
+.r-until{font-family:var(--font-mono);font-size:12px;color:var(--slate);text-align:right;white-space:nowrap}
+.r-until b{display:block;color:#B9C3D9;font-weight:500;font-size:13px}
+.r-lock{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--slate);font-family:var(--font-mono)}
+.r-lock svg{width:12px;height:12px;flex:none}
+@media(max-width:700px){
+  .right-row{grid-template-columns:1fr auto;row-gap:10px}
+  .r-until{grid-column:1/-1;text-align:left;display:flex;gap:8px;align-items:baseline}
+  .r-until b{display:inline}
+}
+
+/* ---------- avtaletidslinje ---------- */
+.tl-scroll{overflow-x:auto;overflow-y:hidden;border:1px solid var(--line-soft);background:var(--night-2)}
+.tl{min-width:860px;position:relative;padding:14px 0 4px}
+.tl-hours{display:flex;height:22px;margin-left:110px;border-bottom:1px solid var(--line-soft)}
+.tl-hour{flex:1;font-family:var(--font-mono);font-size:10.5px;color:var(--slate);border-left:1px solid var(--line-soft);padding-left:7px}
+.tl-lane{display:flex;align-items:center;min-height:38px;border-bottom:1px solid var(--line-soft)}
+.tl-lane:last-child{border-bottom:none}
+.tl-name{width:110px;flex:none;font-family:var(--font-mono);font-size:10.5px;color:var(--slate);padding-left:14px;text-transform:uppercase;letter-spacing:.06em}
+.tl-track{position:relative;flex:1;height:100%;min-height:38px}
+.tl-bar{position:absolute;top:7px;height:24px;background:var(--surface-2);border:1px solid var(--line);display:flex;align-items:center;padding:0 9px;overflow:hidden;font-size:11.5px;color:#B9C3D9;transition:border-color .15s}
+.tl-bar:hover{border-color:var(--flood);color:var(--chalk)}
+.tl-bar.soon{border-color:#7A4A24;background:#241A12;color:#FFD9B0}
+.tl-bar b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-now{position:absolute;top:22px;bottom:0;width:1px;background:var(--signal);z-index:3;pointer-events:none}
+.tl-now::before{content:"NÅ";position:absolute;top:-1px;left:-13px;font-family:var(--font-mono);font-size:9px;background:var(--signal);color:#1A0503;padding:1px 4px;letter-spacing:.08em;font-weight:700}
+.tl-foot{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-family:var(--font-mono);font-size:11px;color:var(--slate)}
+.tl-key{display:inline-flex;align-items:center;gap:7px}
+.tl-key i{width:16px;height:9px;border:1px solid #7A4A24;background:#241A12;display:inline-block}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line-soft);padding-block:34px;color:var(--slate);font-size:12.5px}
+.foot-in{display:flex;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;align-items:center}
+.foot-credit{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;color:var(--slate)}
+.foot-credit a{color:var(--flood);text-decoration:none;border-bottom:1px solid var(--flood-dim);padding-bottom:1px;transition:border-color .15s}
+.foot-credit a:hover{border-bottom-color:var(--flood)}
+.updated{font-family:var(--font-mono);font-size:11px;color:#5D6A8A;border:1px solid var(--line-soft);padding:7px 11px}
+
+.rise{animation:rise .7s cubic-bezier(.2,.7,.3,1) both}
+.rise:nth-child(2){animation-delay:.07s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.rise{animation:none}}
+</style>
+<style>
+html,body{background:#070D1C}
+body{padding:0}
+</style>
+</head>
+<body>
+
+
+<div class="draft" id="draftBanner">
+  <div class="wrap"><b>Under arbeid</b> — rettighetsdataene er under verifisering og skal kvalitetssikres før lansering.</div>
+</div>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="#top">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14.2" fill="none" stroke="#22304F" stroke-width="1.3"/>
+        <circle cx="16" cy="16" r="9" fill="none" stroke="#22304F" stroke-width="1.1"/>
+        <circle cx="16" cy="16" r="4" fill="none" stroke="#22304F" stroke-width="1"/>
+        <g class="sweep">
+          <path d="M16 16 L16 1.8 A14.2 14.2 0 0 1 28.3 9 Z" fill="#FFB43D" opacity=".22"/>
+          <line x1="16" y1="16" x2="16" y2="1.8" stroke="#FFB43D" stroke-width="1.5"/>
+        </g>
+        <circle cx="22.4" cy="10.4" r="2" fill="#FFB43D"/>
+      </svg>
+      <span class="logo-type"><em>TV</em>radar</span>
+      <span class="logo-tld">.no</span>
+    </a>
+    <nav class="nav">
+      <a href="#tjenester">Mine tjenester</a>
+      <a href="#kart">Rettighetskartet</a>
+      <a href="#avtaler">Avtaler som går ut</a>
+    </nav>
+    <div class="topbar-date" id="topDate">—</div>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <canvas id="sky"></canvas>
+  <div class="hero-veil"></div>
+  <div class="hero-in wrap">
+    <div class="rise">
+      <div class="eyebrow"><span class="bar"></span><span>Sportsrettigheter i Norge</span></div>
+      <h1>Hvem sender hva. <span>Og hvor lenge.</span></h1>
+      <p class="hero-lede">Én oversikt over hvilken kanal eller strømmetjeneste som har rettighetene til hver liga og turnering i Norge — og når avtalen går ut.</p>
+    </div>
+    <div class="nextup rise">
+      <div class="nu-left">
+        <div class="nextup-label">Neste avtale som går ut · <em id="nuHolder">—</em></div>
+        <div class="nextup-teams" id="nuComp">—</div>
+        <span class="pill" id="nuChannel">—</span>
+      </div>
+      <div class="nu-right">
+        <span class="count-label">Om</span>
+        <div class="count" id="nuCount">—<small id="nuWhen">—</small></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+<main>
+  <section id="tjenester" class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">01 — FILTER</div>
+        <h2>Hva har du egentlig tilgang til?</h2>
+        <p>Huk av tjenestene du abonnerer på. Resten av siden viser deg hvilke turneringer du nå kan se, hvilke du ikke får med deg, og hvilket abonnement som ville dekket flest av hullene.</p>
+      </div>
+    </div>
+    <div class="svc-panel">
+      <div class="svc-row" id="svcRow"></div>
+      <div class="verdict">
+        <div class="verdict-num" id="vNum">—<small>turneringer</small></div>
+        <div class="verdict-txt" id="vTxt">—</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kart" class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">02 — OVERSIKTEN</div>
+        <h2>Rettighetskartet</h2>
+        <p>Rettigheter tildeles per turnering per avtaleperiode, ikke per kamp. Derfor gjelder denne oversikten hele sesongen — ikke bare i dag.</p>
+      </div>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div id="map"></div>
+  </section>
+
+  <section id="avtaler" class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-num">03 — AVTALEPERIODER</div>
+        <h2>Avtaler som går ut</h2>
+        <p>Når en avtale nærmer seg slutten, starter budrunden — og da kan sporten din flytte seg til en annen tjeneste. Her ser du hvilke som ryker først.</p>
+      </div>
+    </div>
+    <div class="tl-scroll"><div class="tl" id="tl"></div></div>
+    <div class="tl-foot">
+      <span class="tl-key"><i></i> Går ut innen 18 måneder</span>
+      <span id="soonNote"></span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>TVradar.no — sportsrettigheter i Norge</div>
+    <div class="foot-credit">Laget av <a href="https://nilidesign.com/html/index-no.html" target="_blank" rel="noopener">NiliDesign</a></div>
+    <div class="updated" id="updated">—</div>
+  </div>
+</footer>
+
+<script>
+/* =======================================================================
+   REDIGER HER. Dette er hele datagrunnlaget for siden.
+   Endre en rad når en rettighet flytter seg, og oppdater SIST_OPPDATERT.
+   v: 1 = bekreftet mot nyhetskilde,  0 = må verifiseres før lansering
+   slutt: dato avtalen løper ut (sommeren det året, med mindre annet er kjent)
+   ======================================================================= */
+const SIST_OPPDATERT = "2026-09-20";
+
+const SERVICES = [
+  {id:"nrk",     name:"NRK",       gratis:true},
+  {id:"tv2",     name:"TV 2",      gratis:false},
+  {id:"viaplay", name:"Viaplay",   gratis:false},
+  {id:"max",     name:"Max",       gratis:false}
+];
+
+const RIGHTS = [
+  // Fotball
+  {sport:"Fotball", comp:"Champions League",   svc:"tv2",     ch:"TV 2 Play / TV 2 Sport",  slutt:"2031-06-30", v:1},
+  {sport:"Fotball", comp:"Premier League",     svc:"viaplay", ch:"Viaplay / V Sport",       slutt:"2028-06-30", v:1},
+  {sport:"Fotball", comp:"Eliteserien",        svc:"tv2",     ch:"TV 2 Play / TV 2 Sport",  slutt:"2028-12-31", v:1},
+  {sport:"Fotball", comp:"OBOS-ligaen",        svc:"tv2",     ch:"TV 2 Play",               slutt:"2028-12-31", v:0},
+  {sport:"Fotball", comp:"Toppserien",         svc:"tv2",     ch:"TV 2 Play / NRK",         slutt:"2028-12-31", v:0},
+  {sport:"Fotball", comp:"Europa League",      svc:"viaplay", ch:"Viaplay",                 slutt:"2027-06-30", v:0},
+  {sport:"Fotball", comp:"Conference League",  svc:"viaplay", ch:"Viaplay",                 slutt:"2027-06-30", v:0},
+  {sport:"Fotball", comp:"Nations League",     svc:"tv2",     ch:"TV 2 Direkte / TV 2 Play",slutt:"2028-06-30", v:0},
+  {sport:"Fotball", comp:"NM i fotball",       svc:"tv2",     ch:"TV 2 / NRK",              slutt:"2028-12-31", v:0},
+
+  // Vintersport
+  {sport:"Vintersport", comp:"Skiskyting, verdenscup", svc:"nrk",     ch:"NRK 1 / TV 2",    slutt:"2027-06-30", v:1},
+  {sport:"Vintersport", comp:"Langrenn, verdenscup",   svc:"viaplay", ch:"Viaplay",         slutt:"2027-06-30", v:0},
+  {sport:"Vintersport", comp:"Hopp, verdenscup",       svc:"viaplay", ch:"Viaplay",         slutt:"2027-06-30", v:0},
+  {sport:"Vintersport", comp:"Alpint, verdenscup",     svc:"viaplay", ch:"Viaplay",         slutt:"2027-06-30", v:0},
+
+  // Håndball og ishockey
+  {sport:"Håndball", comp:"REMA 1000-ligaen",  svc:"tv2",     ch:"TV 2 Play",               slutt:"2030-06-30", v:0},
+  {sport:"Håndball", comp:"EM og VM",          svc:"viaplay", ch:"Viaplay",                 slutt:"2027-06-30", v:0},
+  {sport:"Ishockey", comp:"Fjordkraft-ligaen", svc:"tv2",     ch:"TV 2 Play",               slutt:"2030-06-30", v:0},
+  {sport:"Ishockey", comp:"NHL",               svc:"viaplay", ch:"Viaplay",                 slutt:"2027-06-30", v:0},
+
+  // Motorsport
+  {sport:"Motorsport", comp:"Formel 1",        svc:"viaplay", ch:"Viaplay / V Sport",       slutt:"2027-12-31", v:0},
+  {sport:"Motorsport", comp:"MotoGP",          svc:"viaplay", ch:"Viaplay",                 slutt:"2027-12-31", v:0},
+
+  // Øvrig
+  {sport:"Tennis", comp:"Grand Slam-turneringene", svc:"max", ch:"Max / Eurosport",         slutt:"2028-12-31", v:0},
+  {sport:"Golf",   comp:"PGA Tour",            svc:"max",     ch:"Max / Eurosport",         slutt:"2030-12-31", v:0},
+  {sport:"Golf",   comp:"Ryder Cup",           svc:"viaplay", ch:"Viaplay",                 slutt:"2027-12-31", v:0},
+  {sport:"Sykkel", comp:"Tour de France",      svc:"tv2",     ch:"TV 2 / Max",              slutt:"2028-12-31", v:0},
+  {sport:"Basket", comp:"NBA",                 svc:"max",     ch:"Max",                     slutt:"2036-06-30", v:0}
+];
+/* ===================== slutt på redigerbart område ===================== */
+
+const SVC = Object.fromEntries(SERVICES.map(s=>[s.id,s]));
+RIGHTS.forEach((r,i)=>{ r.id="r"+i; r.end=new Date(r.slutt+"T12:00:00"); });
+RIGHTS.sort((a,b)=>a.end-b.end);
+
+const store={
+  get(k,fb){ try{const v=localStorage.getItem(k);return v?JSON.parse(v):fb;}catch(e){return fb;} },
+  set(k,v){ try{localStorage.setItem(k,JSON.stringify(v));}catch(e){} }
+};
+let mine = new Set(store.get("tvradar.svc",["nrk"]));
+let sportFilter = "Alle";
+
+const MONTHS=["januar","februar","mars","april","mai","juni","juli","august","september","oktober","november","desember"];
+const lockIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+const tickIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+const sesong = d => d.getMonth()<7 ? "sesongen "+(d.getFullYear()-1)+"/"+String(d.getFullYear()).slice(2) : String(d.getFullYear());
+
+/* ---------- hero canvas ---------- */
+(function sky(){
+  const c=document.getElementById("sky"), ctx=c.getContext("2d");
+  const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w=0,h=0,parts=[];
+  const cones=[{x:.14,a:-.20},{x:.42,a:-.05},{x:.72,a:.09},{x:.95,a:.22}];
+  function resize(){
+    const r=c.getBoundingClientRect(), dpr=Math.min(devicePixelRatio||1,2);
+    w=r.width; h=r.height;
+    c.width=Math.max(1,w*dpr); c.height=Math.max(1,h*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    parts=Array.from({length:Math.round(w/11)},()=>({x:Math.random()*w,y:Math.random()*h,s:.35+Math.random()*1.1,v:.18+Math.random()*.55,o:.1+Math.random()*.4}));
+  }
+  function frame(t){
+    ctx.clearRect(0,0,w,h);
+    const g=ctx.createLinearGradient(0,0,0,h);
+    g.addColorStop(0,"#040813"); g.addColorStop(.5,"#0A1430"); g.addColorStop(1,"#15305C");
+    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+    const hz=ctx.createRadialGradient(w*.5,h*1.02,10,w*.5,h*1.02,h*.9);
+    hz.addColorStop(0,"rgba(255,180,61,.20)"); hz.addColorStop(1,"rgba(255,180,61,0)");
+    ctx.fillStyle=hz; ctx.fillRect(0,0,w,h);
+    ctx.globalCompositeOperation="lighter";
+    cones.forEach((k,i)=>{
+      const sway=Math.sin(t/5200+i*1.9)*.035, breathe=.5+Math.sin(t/3100+i)*.14;
+      ctx.save(); ctx.translate(k.x*w,-h*.06); ctx.rotate(k.a+sway);
+      const lg=ctx.createLinearGradient(0,0,0,h*1.25);
+      lg.addColorStop(0,"rgba(255,203,130,"+(.26*breathe)+")");
+      lg.addColorStop(.45,"rgba(255,180,61,"+(.10*breathe)+")");
+      lg.addColorStop(1,"rgba(255,180,61,0)");
+      ctx.fillStyle=lg;
+      ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-w*.30,h*1.25); ctx.lineTo(w*.30,h*1.25); ctx.closePath(); ctx.fill();
+      ctx.beginPath(); ctx.arc(0,0,26,0,6.2832);
+      ctx.fillStyle="rgba(255,226,180,"+(.5*breathe)+")"; ctx.fill();
+      ctx.restore();
+    });
+    parts.forEach(p=>{
+      if(!reduce){ p.y+=p.v; p.x+=p.v*.22; if(p.y>h){p.y=-6;p.x=Math.random()*w;} }
+      ctx.fillStyle="rgba(255,225,190,"+p.o+")";
+      ctx.fillRect(p.x,p.y,p.s,p.s*3.4);
+    });
+    ctx.globalCompositeOperation="source-over";
+  }
+  resize(); addEventListener("resize",resize,{passive:true});
+  if(reduce) frame(0); else (function loop(t){ frame(t); requestAnimationFrame(loop); })(0);
+})();
+
+/* ---------- tjenester ---------- */
+function renderServices(){
+  const row=document.getElementById("svcRow");
+  row.innerHTML=SERVICES.map(s=>
+    '<button class="svc" data-svc="'+s.id+'" aria-pressed="'+mine.has(s.id)+'">'+
+      '<span class="tick">'+tickIcon+'</span><span>'+s.name+'</span>'+
+      (s.gratis?'<span class="pill free" style="pointer-events:none">gratis</span>':'')+
+    '</button>').join("");
+  row.querySelectorAll("[data-svc]").forEach(b=>b.addEventListener("click",()=>{
+    const id=b.dataset.svc;
+    mine.has(id)?mine.delete(id):mine.add(id);
+    store.set("tvradar.svc",[...mine]);
+    renderServices(); renderVerdict(); renderMap();
+  }));
+}
+
+function renderVerdict(){
+  const can=RIGHTS.filter(r=>mine.has(r.svc)).length, tot=RIGHTS.length;
+  document.getElementById("vNum").innerHTML=can+" / "+tot+"<small>turneringer du får se</small>";
+  const missing={};
+  RIGHTS.filter(r=>!mine.has(r.svc)).forEach(r=>{ missing[r.svc]=(missing[r.svc]||0)+1; });
+  const best=Object.entries(missing).sort((a,b)=>b[1]-a[1])[0];
+  let txt = tot-can===0
+    ? "<strong>Du har alt.</strong> Ingen av turneringene i oversikten ligger bak en tjeneste du mangler."
+    : "<strong>"+(tot-can)+" turneringer</strong> ligger hos tjenester du ikke har.";
+  if(best) txt+='<span class="hint">Størst uttelling: <b>'+SVC[best[0]].name+"</b> åpner "+best[1]+" av dem.</span>";
+  document.getElementById("vTxt").innerHTML=txt;
+}
+
+/* ---------- rettighetskart ---------- */
+function renderFilters(){
+  const sports=["Alle",...new Set(RIGHTS.map(r=>r.sport))];
+  const f=document.getElementById("filters");
+  f.innerHTML=sports.map(s=>'<button class="chip" data-sport="'+s+'" aria-pressed="'+(s===sportFilter)+'">'+s+"</button>").join("");
+  f.querySelectorAll("[data-sport]").forEach(b=>b.addEventListener("click",()=>{
+    sportFilter=b.dataset.sport; renderFilters(); renderMap();
+  }));
+}
+
+function renderMap(){
+  const rows=RIGHTS.filter(r=>sportFilter==="Alle"||r.sport===sportFilter);
+  const groups={};
+  rows.forEach(r=>{ (groups[r.sport]=groups[r.sport]||[]).push(r); });
+  document.getElementById("map").innerHTML=Object.entries(groups).map(([sport,list])=>
+    '<div class="sport-group"><div class="sport-label">'+sport+"</div>"+
+    list.map(r=>{
+      const open=mine.has(r.svc), s=SVC[r.svc];
+      const right=open
+        ? '<span class="pill'+(s.gratis?" free":"")+'">'+r.ch+"</span>"
+        : '<span class="r-lock">'+lockIcon+"Krever "+s.name+"</span>";
+      return '<div class="right-row'+(open?"":" is-locked")+'">'+
+        '<div class="r-comp">'+r.comp+"<span>"+s.name+"</span></div>"+
+        '<div class="r-until">ut <b>'+sesong(r.end)+"</b></div>"+
+        "<div>"+right+"</div></div>";
+    }).join("")+"</div>"
+  ).join("");
+}
+
+/* ---------- avtaletidslinje ---------- */
+function renderTimeline(){
+  const tl=document.getElementById("tl");
+  const y0=new Date().getFullYear();
+  const last=Math.min(y0+7, Math.max(...RIGHTS.map(r=>r.end.getFullYear()))+1);
+  const winStart=new Date(y0+"-01-01T00:00:00"), winEnd=new Date(last+"-01-01T00:00:00");
+  const span=winEnd-winStart;
+  const pct=d=>Math.max(0,Math.min(100,((d-winStart)/span)*100));
+  const years=[]; for(let y=y0;y<last;y++) years.push(y);
+  const soonLimit=new Date(); soonLimit.setMonth(soonLimit.getMonth()+18);
+
+  const lanes=SERVICES.filter(s=>RIGHTS.some(r=>r.svc===s.id));
+  tl.innerHTML=
+    '<div class="tl-hours">'+years.map(y=>'<div class="tl-hour">'+y+"</div>").join("")+"</div>"+
+    lanes.map(s=>{
+      const list=RIGHTS.filter(r=>r.svc===s.id);
+      const h=Math.max(38, list.length*30+10);
+      const bars=list.map((r,i)=>{
+        const l=pct(winStart), w=pct(r.end)-l;
+        const soon=r.end<=soonLimit?" soon":"";
+        return '<div class="tl-bar'+soon+'" style="left:0;width:'+Math.max(4,w)+'%;top:'+(5+i*30)+'px" title="'+r.comp+" — ut "+sesong(r.end)+'"><b>'+r.comp+"</b></div>";
+      }).join("");
+      return '<div class="tl-lane" style="min-height:'+h+'px"><div class="tl-name">'+s.name+
+        '</div><div class="tl-track" style="min-height:'+h+'px">'+bars+"</div></div>";
+    }).join("")+
+    '<div class="tl-now" style="left:calc(110px + (100% - 110px) * '+(pct(new Date())/100)+')"></div>';
+
+  const soon=RIGHTS.filter(r=>r.end<=soonLimit).length;
+  document.getElementById("soonNote").textContent=soon?soon+" avtaler går ut innen halvannet år":"";
+}
+
+/* ---------- hero-kort ---------- */
+function renderNext(){
+  const now=new Date();
+  const next=RIGHTS.find(r=>r.end>now)||RIGHTS[0];
+  if(!next) return;
+  const s=SVC[next.svc];
+  document.getElementById("nuHolder").textContent=s.name;
+  document.getElementById("nuComp").textContent=next.comp;
+  const ch=document.getElementById("nuChannel");
+  ch.textContent=next.ch; ch.className="pill"+(s.gratis?" free":"");
+  const days=Math.max(0,Math.round((next.end-now)/86400000));
+  document.getElementById("nuCount").innerHTML=
+    days+' <small id="nuWhen">dager — ut '+sesong(next.end)+"</small>";
+}
+
+/* ---------- ticker + dato ---------- */
+function renderTicker(){
+  const items=RIGHTS.map(r=>
+    '<span class="ticker-item"><b>'+r.comp+"</b><i>→</i>"+SVC[r.svc].name+"</span>"
+  ).join("");
+  document.getElementById("ticker").innerHTML=items+items;
+}
+
+(function stamp(){
+  const d=new Date(SIST_OPPDATERT+"T12:00:00");
+  const txt=d.getDate()+". "+MONTHS[d.getMonth()]+" "+d.getFullYear();
+  document.getElementById("updated").textContent="Sist oppdatert "+txt;
+  const n=new Date();
+  document.getElementById("topDate").textContent=n.getDate()+". "+MONTHS[n.getMonth()]+" "+n.getFullYear();
+})();
+
+renderServices(); renderVerdict(); renderFilters(); renderMap(); renderTimeline(); renderNext(); renderTicker();
+</script>
+
+</body>
+</html>
